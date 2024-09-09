@@ -20,8 +20,14 @@ jobs:
         architecture: ["ARM64"]
 
     steps:
+    
     - uses: actions/checkout@v4
+    - name: Debug Environment
+      run: |
+        echo "PATH: $PATH"
+        echo "SHELL: $SHELL"
+      shell: bash
     - name: Build
-      run: echo $PATH; $Env:Path; swift build -v
+      run: swift build -v
     - name: Run tests
       run: swift test -v
