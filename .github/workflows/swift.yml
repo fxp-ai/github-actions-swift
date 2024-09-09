@@ -22,8 +22,6 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build
-      run: swift build -v
-      shell: bash
+      run: echo $PATH; $Env:Path; swift build -v
     - name: Run tests
       run: swift test -v
-      shell: bash
