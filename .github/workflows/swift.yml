@@ -21,8 +21,6 @@ jobs:
     steps:
     
     - uses: actions/checkout@v4
-    - name: Debug PATH
-      run: echo $env:Path
     - name: Build
       run: swift build -v
     - name: Run tests
